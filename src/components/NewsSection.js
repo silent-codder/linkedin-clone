@@ -11,6 +11,29 @@ const HASH_DATA = [
     "talent"
 ]
 
+const NEWS_DATA = [
+    {
+        title : "Intel to build $7B Arizona factory",
+        msg : "20 minutes ago, 42 post aboutthis"
+    },
+    {
+        title : "Intel to build $7B Arizona factory",
+        msg : "20 minutes ago, 42 post aboutthis"
+    },
+    {
+        title : "Intel to build $7B Arizona factory",
+        msg : "20 minutes ago, 42 post aboutthis"
+    },
+    {
+        title : "Intel to build $7B Arizona factory",
+        msg : "20 minutes ago, 42 post aboutthis"
+    },
+    {
+        title : "Intel to build $7B Arizona factory",
+        msg : "20 minutes ago, 42 post aboutthis"
+    }
+]
+
 function NewsSection() {
 
     const hashTag = HASH_DATA.map((hash) =>
@@ -19,13 +42,19 @@ function NewsSection() {
             <h1 className='text-gray-500'>{hash}</h1>
         </div>
     )
+
+    const news = NEWS_DATA.map((news) =>
+        <div className='flex flex-col mt-2 p-1 hover:bg-gray-200'>
+            <h1 className='text-gray-800 text-base font-medium'>{news.title}</h1>
+            <h1 className='text-gray-500 text-sm'>{news.msg}</h1>
+        </div>
+    )
+
     return (
-        <div className='basis-[25%]'>
-            <div className='flex flex-col pb-3 mx-auto items-center border-2 bg-white rounded-xl rounded-b-none overflow-hidden'>
-                <img className='h-[90px] w-full object-cover -mb-10' src={bg} />
-                <img className='rounded-full w-[100px] h-[100px] object-cover border-4 border-white' src={avatar} />
-                <h1 className='font-semibold'>Ajinkya Shinde</h1>
-                <h1 className='text-sm text-gray-400'>Android Developer</h1>
+        <div className='basis-[30%]'>
+            <div className='flex flex-col pb-3 mx-auto border-2 p-4 bg-white rounded-xl rounded-b-none overflow-hidden'>
+                <h1 className='font-normal'>LinkedIn News</h1>
+                {news}
             </div>
 
             <div className='flex flex-col px-3 bg-white py-4 mx-auto border-2 border-t-0 rounded-2xl items-stretch rounded-t-none'>
